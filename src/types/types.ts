@@ -1,4 +1,4 @@
-export type PunkResponse = {
+export type DrinkInformation = {
   id: string;
   name: string;
   tagline: string;

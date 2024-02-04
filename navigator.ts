@@ -1,4 +1,4 @@
-import { PunkResponse } from "./src/types/types";
+import { DrinkInformation } from "./src/types/types";
 
 export enum StackRoutes {
   HomeScreen = "HomeScreen",
@@ -7,5 +7,5 @@ export enum StackRoutes {
 
 export type StackParamsList = {
   [StackRoutes.HomeScreen]: undefined;
-  [StackRoutes.InfoScreen]: { drink: PunkResponse };
+  [StackRoutes.InfoScreen]: { drink: DrinkInformation };
 };

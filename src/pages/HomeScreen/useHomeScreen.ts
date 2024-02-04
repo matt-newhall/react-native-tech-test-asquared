@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { PunkResponse } from "../../types/types";
+import { DrinkInformation } from "../../types/types";
 import { fetchData } from "../../utils/fetchData";
 
 export const useHomeScreen = () => {
-  let [drinkData, setDrinkData] = useState<PunkResponse[]>([]);
+  let [drinkData, setDrinkData] = useState<DrinkInformation[]>([]);
 
   useEffect(() => {
     fetchDrinks();
