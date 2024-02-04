@@ -1,7 +1,8 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Text, TouchableOpacity } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { StackParamsList, StackRoutes } from "../../../navigator";
 import { DrinkInformation } from "../../types/types";
+import { styles } from "./styles";
 
 type DrinkItemProps = {
   drink: DrinkInformation;
@@ -15,7 +16,19 @@ type DrinkItemProps = {
 export const DrinkItem = ({ drink, navigation }: DrinkItemProps) => (
   <TouchableOpacity
     onPress={() => navigation.navigate(StackRoutes.InfoScreen, { drink })}
+    style={styles.container}
   >
-    <Text>{drink.name}</Text>
+    <View style={styles.imageContainer}>
+      <Image
+        style={styles.tinyLogo}
+        source={{
+          uri: drink.image_url,
+        }}
+      />
+    </View>
+    <View style={styles.textContainer}>
+      <Text style={styles.title}>{drink.name}</Text>
+      <Text numberOfLines={1}>{drink.description}</Text>
+    </View>
   </TouchableOpacity>
 );
