@@ -1,8 +1,8 @@
 import { DrinkInformation } from "./src/types/types";
 
 export enum StackRoutes {
-  HomeScreen = "HomeScreen",
-  InfoScreen = "InfoScreen",
+  HomeScreen = "Home",
+  InfoScreen = "Drink Information",
 }
 
 export type StackParamsList = {
