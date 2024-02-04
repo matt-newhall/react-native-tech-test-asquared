@@ -6,7 +6,7 @@ import { DrinkItem } from "../../atoms/DrinkItem/DrinkItem";
 import { styles } from "./styles";
 import { useHomeScreen } from "./useHomeScreen";
 
-type HomeScreenProps = NativeStackScreenProps<
+export type HomeScreenProps = NativeStackScreenProps<
   StackParamsList,
   StackRoutes.HomeScreen
 >;
@@ -21,11 +21,7 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
         <FlatList
           data={drinkData}
           renderItem={({ item }) => (
-            <DrinkItem
-              title={item.name}
-              imageUrl={item.image_url}
-              description={item.description}
-            />
+            <DrinkItem drink={item} navigation={navigation} />
           )}
           keyExtractor={(item) => item.id}
         />

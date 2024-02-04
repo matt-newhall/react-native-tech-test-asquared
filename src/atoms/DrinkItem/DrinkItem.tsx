@@ -1,13 +1,21 @@
-import { Text, View } from "react-native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { Text, TouchableOpacity } from "react-native";
+import { StackParamsList, StackRoutes } from "../../../navigator";
+import { DrinkInformation } from "../../types/types";
 
 type DrinkItemProps = {
-  description: string;
-  imageUrl: string;
-  title: string;
+  drink: DrinkInformation;
+  navigation: NativeStackNavigationProp<
+    StackParamsList,
+    StackRoutes.HomeScreen,
+    undefined
+  >;
 };
 
-export const DrinkItem = ({ title }: DrinkItemProps) => (
-  <View>
-    <Text>{title}</Text>
-  </View>
+export const DrinkItem = ({ drink, navigation }: DrinkItemProps) => (
+  <TouchableOpacity
+    onPress={() => navigation.navigate(StackRoutes.InfoScreen, { drink })}
+  >
+    <Text>{drink.name}</Text>
+  </TouchableOpacity>
 );
