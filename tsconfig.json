@@ -2,5 +2,7 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true
-  }
+  },
+  "include": ["./src/", "App.tsx", "navigator.tsx"],
+  "exclude": ["jest.config.js"],
 }

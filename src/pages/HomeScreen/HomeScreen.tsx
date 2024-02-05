@@ -24,7 +24,7 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
         )}
         keyExtractor={(item) => item.id}
       />
-      {isLoading && <ActivityIndicator size="large" />}
+      {isLoading && <ActivityIndicator data-testid="loadingBar" size="large" />}
     </View>
   );
 };
