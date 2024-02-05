@@ -16,7 +16,7 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
   const isLoading = drinkData.length === 0;
 
   return (
-    <View style={styles.container}>
+    <View style={styles.screen}>
       <FlatList
         data={drinkData}
         renderItem={({ item }) => (
